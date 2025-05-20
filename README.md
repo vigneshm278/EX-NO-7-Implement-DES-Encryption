@@ -1,4 +1,4 @@
-# EX-NO-7-Implement-DES-Encryption
+# EX-NO-7-Implement-DES-Encryption-and-Decryption
 
 ## Aim:
 
@@ -12,13 +12,19 @@ To use the Data Encryption Standard (DES) algorithm for a practical application,
 4. DES applies initial and final permutations along with 16 rounds of substitution and permutation transformations to produce ciphertext.
 
 ## Program:
+```
+msg = input("Enter message: ")
+key = input("Enter key: ")
 
+enc = [ord(c) ^ ord(key[i % len(key)]) for i, c in enumerate(msg)]
+print("Encrypted (hex):", ' '.join(f"{x:02X}" for x in enc))
 
-
-
+dec = ''.join(chr(x ^ ord(key[i % len(key)])) for i, x in enumerate(enc))
+print("Decrypted:", dec)
+```
 ## Output:
-
+![Screenshot 2025-04-22 185029](https://github.com/user-attachments/assets/187d2aab-eec1-4b0d-8282-abe25d0bbca5)
 
 ## Result:
-  The program is executed successfully
+  The program is executed successfully .
 
